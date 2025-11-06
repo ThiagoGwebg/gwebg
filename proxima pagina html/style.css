@@ -11,20 +11,71 @@ body{
   overflow: hidden;
 }
 
+@keyframes pulsoConteiner {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03); /* Pulso leve para não ser exagerado */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 .conteinerPrincipal{
   filter: drop-shadow(1px 1px 20px rgb(194, 115, 187));
-  
+  padding: 15px;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   display: flex;
-  width: 220px;
-  height: 260px;
+  width: 320px;
+  height: 390px;
   background-color: rgb(199, 160, 209);
   border-radius: 15px;
+
+  animation: pulsoConteiner 2s infinite ease-in-out;
 }
 
 .palagrafo{
   filter: drop-shadow(1px 1px 20px rgb(194, 115, 187));
   font-family: 'Courier New', Courier, monospace;
+  color: rgb(20, 26, 110);
+}
+
+/* --- Estilo para o Container dos Corações Flutuantes --- */
+#coracoes-flutuantes {
+    position: fixed; /* Fixa o container na tela */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Crucial: Permite cliques e interações através dos corações */
+    z-index: -1; /* Coloca os corações atrás do seu conteúdo principal */
+    overflow: hidden; /* Garante que os corações não criem scroll */
+}
+
+/* --- Estilo para CADA Coração Flutuante --- */
+.coracao-flutuante {
+    position: absolute; /* Para posicionar individualmente */
+    background-image: url('../icons8-heart-100.png'); /* Sua imagem de coração */
+    background-size: cover;
+    opacity: 0; /* Começa invisível para aparecer suavemente */
+    animation: subirFlutuar 15s linear forwards; /* ANIMAÇÃO PRINCIPAL DE SUBIDA */
+    
+    /* Efeito de desvanecer suavemente */
+    transition: opacity 1s ease-out; 
+}
+
+/* --- Animação para os Corações Subirem e Desaparecerem --- */
+@keyframes subirFlutuar {
+    0% {
+        transform: translateY(0) rotate(0deg); /* Começa na posição inicial */
+        opacity: 0.8; /* Fica visível */
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg); /* Sobe para fora da tela e gira */
+        opacity: 0; /* Desaparece no topo */
+    }
 }
