@@ -8,6 +8,7 @@ body{
   align-items: center;
   justify-content: center;
   transition: opacity 1s ease;
+  overflow: hidden;
 }
 
 .conteinerPrincipal{
