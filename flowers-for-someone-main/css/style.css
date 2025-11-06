@@ -1379,6 +1379,10 @@ body{
 
 /* Garanta que o .clicado também tenha a transição se quiser um efeito suave ao clicar */
 .clicado {
+   user-select: none;
+    -webkit-user-select: none; /* Para navegadores baseados em WebKit (Chrome, Safari) */
+    -moz-user-select: none;    /* Para Firefox */
+    -ms-user-select: none;
 
   
     transform: scale(1.30); 
