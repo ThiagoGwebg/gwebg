@@ -1359,6 +1359,10 @@ body{
 }
 
 .coracao {
+    user-select: none;
+    -webkit-user-select: none; /* Para navegadores baseados em WebKit (Chrome, Safari) */
+    -moz-user-select: none;    /* Para Firefox */
+    -ms-user-select: none;
     width: 45px;          
     height: 45px;         
     cursor: pointer;      
