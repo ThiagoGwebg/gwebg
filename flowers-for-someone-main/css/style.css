@@ -1254,7 +1254,7 @@ body{
 
 .clicado {
     transform: scale(0.92); 
-    box-shadow: 0 0 5px rgba(255, 0, 0, 0.6); 
+    filter: drop-shadow:(1px 1px 20px rgba(255, 0, 0, 0.6)); 
 }
 
 /* --- Estilos para a Barra de Progresso VERTICAL --- */
