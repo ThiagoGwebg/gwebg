@@ -1,0 +1,51 @@
+body{
+    background: linear-gradient(135deg, #0A1F44, #6C3BA5)
+}
+
+#tela-inicial {
+  background: linear-gradient(135deg, #0A1F44, #6C3BA5);
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s ease;
+}
+
+#iniciar {
+  text-decoration: none;
+  background-color: #C2187A;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#iniciar:hover {
+  transform: scale(1.05);
+  background-color: #FF4081;
+}
+
+
+.palavra {
+  position: absolute;
+  animation: surgir 5s ease-in-out infinite alternate;
+  color: #C2187A;
+  font-size: 24px;
+  opacity: 0;
+  width: 50px;
+  height: aut;
+}
+
+@keyframes surgir {
+  0% { opacity: 0; transform: translateY(20px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+
+
