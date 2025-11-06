@@ -1288,15 +1288,31 @@ body{
     transition: opacity 1s ease-out, transform 1s ease-out; /* O efeito de aparecimento dura 1 segundo */
 }
 
+
+
 /* --- Estilos para o Botão --- */
+/* --- Animação de Pulso Específica para o Botão --- */
+@keyframes pulsoBotao {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03); /* Pulso leve para não ser exagerado */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
 .botao-navegacao {
     /* Estilos Visuais */
-    display: block; /* Para ocupar a largura total e usar margens/padding */
+    display: block; 
     padding: 10px 20px;
     margin-top: 20px;
-    background-color: #4CAF50; /* Um tom de verde para chamar a atenção */
+    background-color: #B2228E; 
     color: white;
-    text-decoration: none; /* Remove o sublinhado do link */
+    text-decoration: none; 
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
@@ -1304,13 +1320,25 @@ body{
 
     /* Configuração de Transição para aparecer suavemente */
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; 
+    
+    /* === APLICAÇÃO DA ANIMAÇÃO NO BOTÃO VISÍVEL === */
+    animation: pulsoBotao 2s infinite ease-in-out; /* Pulsa mais lentamente que o coração */
 }
 
 /* CLASSE INICIAL PARA OCULTAR O BOTÃO */
 .oculto-botao {
     opacity: 0;
-    pointer-events: none; /* Impede cliques enquanto estiver invisível */
-    transform: translateY(50px); /* Começa ligeiramente para baixo */
+    pointer-events: none; 
+    transform: translateY(50px); 
+    
+    /* === REMOVER ANIMAÇÃO QUANDO OCULTO === */
+    /* Ao ocultar, a animação de pulso deve ser parada para não afetar o transform: translateY */
+    animation: none; 
+}
+
+/* Opcional: Efeito hover */
+.botao-navegacao:hover {
+    transform: scale(1.05); /* Expande um pouco ao passar o mouse */
 }
 
 
@@ -1338,7 +1366,7 @@ body{
     background-size: cover;
     /* Mantenha a transição para o clique */
     transition: transform 0.15s ease-out;
-    filter: drop-shadow(1px 1px 10px rgb(206, 29, 29));
+    filter: drop-shadow(1px 1px 10px #ce1d1d);
     
     /* === APLICAÇÃO DA ANIMAÇÃO QUE FARÁ O CORAÇÃO PULSAR === */
     animation: pulsoContinua 1.5s infinite ease-in-out; 
