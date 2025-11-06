@@ -1242,15 +1242,8 @@ body{
 
 
 /* --- Estilos para o Coração --- */
-.coracao {
-    width: 45px;          
-    height: 45px;         
-    cursor: pointer;      
-    /* Removendo 'margin: 20px auto;' para ser controlado pelo container-agrupado */
-    background-image: url('../icons8-heart-100.png');
-    background-size: cover;
-    transition: transform 0.15s ease-out; 
-}
+
+
 
 .clicado {
     transform: scale(0.92); 
@@ -1259,9 +1252,10 @@ body{
 
 /* --- Estilos para a Barra de Progresso VERTICAL --- */
 .progresso-linha {
+    filter: drop-shadow(1px 1px 10px #ce1d1d);
     width: 15px; 
     height: 220px; 
-    background-color: #eee; 
+    
     border-radius: 8px; 
     /* Removendo 'margin: 20px auto;' para ser controlado pelo container-agrupado */
     overflow: hidden; 
@@ -1275,7 +1269,7 @@ body{
 .progresso-preenchimento {
     width: 100%; 
     height: 0%; 
-    background-color: #9127bb; 
+    background-color: #B2228E; 
     transition: height 0.3s ease-in-out; 
 }
 
@@ -1316,7 +1310,46 @@ body{
 .oculto-botao {
     opacity: 0;
     pointer-events: none; /* Impede cliques enquanto estiver invisível */
-    transform: translateY(10px); /* Começa ligeiramente para baixo */
+    transform: translateY(50px); /* Começa ligeiramente para baixo */
 }
 
-/* CLASSE DE EXIBIÇÃO: O JavaScript vai remover .oculto-botao */
+
+
+
+/* --- Animação de Pulso Contínuo --- */
+@keyframes pulsoContinua {
+    0% {
+        transform: scale(1); /* Tamanho normal */
+    }
+    50% {
+        transform: scale(1.30); /* Ligeiramente maior */
+    }
+    100% {
+        transform: scale(1); /* Volta ao tamanho normal */
+    }
+}
+
+.coracao {
+    width: 45px;          
+    height: 45px;         
+    cursor: pointer;      
+    /* Removendo 'margin: 20px auto;' para ser controlado pelo container-agrupado */
+    background-image: url('../icons8-heart-100.png');
+    background-size: cover;
+    /* Mantenha a transição para o clique */
+    transition: transform 0.15s ease-out;
+    filter: drop-shadow(1px 1px 10px rgb(206, 29, 29));
+    
+    /* === APLICAÇÃO DA ANIMAÇÃO QUE FARÁ O CORAÇÃO PULSAR === */
+    animation: pulsoContinua 1.5s infinite ease-in-out; 
+}
+
+/* Garanta que o .clicado também tenha a transição se quiser um efeito suave ao clicar */
+.clicado {
+
+  
+    transform: scale(1.30); 
+    filter: drop-shadow(1px 1px 10px rgb(168, 166, 51)); 
+}
+
+/* --- Estilos para o Coração --- */
