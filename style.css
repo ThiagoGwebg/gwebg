@@ -15,20 +15,37 @@ body{
 }
 
 #iniciar {
+  text-align: center;
   text-decoration: none;
-  background-color: #C2187A;
+  background-color: #B2228E;
   border: none;
   padding: 15px 30px;
   border-radius: 10px;
   color: white;
-  font-size: 18px;
+  height: 15px;
+  width: 100px;
   cursor: pointer;
   transition: 0.3s;
+  filter: drop-shadow(1px 1px 10px #B2228E);
+  animation: pulsoBotao 1s infinite ease-in-out;
+}
+
+@keyframes pulsoBotao {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Pulso leve para não ser exagerado */
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 #iniciar:hover {
   transform: scale(1.05);
-  background-color: #FF4081;
+  background-color: #B2228E;
+  
 }
 
 
