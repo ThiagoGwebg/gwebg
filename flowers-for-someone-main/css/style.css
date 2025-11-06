@@ -1370,7 +1370,7 @@ body{
     filter: drop-shadow(1px 1px 10px #ce1d1d);
     
     /* === APLICAÇÃO DA ANIMAÇÃO QUE FARÁ O CORAÇÃO PULSAR === */
-    animation: pulsoContinua 1.5s infinite ease-in-out; 
+    animation: pulsoContinua 0.9s infinite ease-in-out; 
 }
 
 /* Garanta que o .clicado também tenha a transição se quiser um efeito suave ao clicar */
