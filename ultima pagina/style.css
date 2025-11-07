@@ -1,0 +1,93 @@
+body{
+  background: linear-gradient(135deg, #0A1F44, #6C3BA5);
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s ease;
+  overflow: hidden;
+}
+
+/* Container (o mesmo do anterior) */
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999; 
+}
+
+/* Estilo para cada confete individual (o mesmo do anterior) */
+.confetti {
+     
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: transparent; 
+    border-radius: 50%;
+    opacity: 0;
+    
+
+}
+
+.texto{
+    filter: drop-shadow(1px 1px 10px rgb(201, 158, 158));
+}
+
+.botão{
+    
+    display: block; 
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #B2228E; 
+    color: white;
+    text-decoration: none; 
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.botao-voltar{
+    text-decoration: none;
+    color: azure;
+}
+
+/* --- Animação de Pulso Contínuo --- */
+@keyframes pulsoContinua {
+    0% {
+        transform: scale(1); /* Tamanho normal */
+    }
+    50% {
+        transform: scale(1.30); /* Ligeiramente maior */
+    }
+    100% {
+        transform: scale(1); /* Volta ao tamanho normal */
+    }
+}
+
+.coracao {
+    top: 80%;
+    position: absolute;
+    user-select: none;
+    -webkit-user-select: none; /* Para navegadores baseados em WebKit (Chrome, Safari) */
+    -moz-user-select: none;    /* Para Firefox */
+    -ms-user-select: none;
+    width: 45px;          
+    height: 45px;         
+    cursor: pointer;      
+    /* Removendo 'margin: 20px auto;' para ser controlado pelo container-agrupado */
+    background-image: url('../icons8-heart-100.png');
+    background-size: cover;
+    /* Mantenha a transição para o clique */
+    transition: transform 0.15s ease-out;
+    filter: drop-shadow(1px 1px 10px #ce1d1d);
+    
+    /* === APLICAÇÃO DA ANIMAÇÃO QUE FARÁ O CORAÇÃO PULSAR === */
+    animation: pulsoContinua 0.9s infinite ease-in-out; 
+}
