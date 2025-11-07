@@ -67,3 +67,24 @@ body{
 
 
 
+.coracao {
+    top: 20px;
+    position: absolute;
+    user-select: none;
+    -webkit-user-select: none; /* Para navegadores baseados em WebKit (Chrome, Safari) */
+    -moz-user-select: none;    /* Para Firefox */
+    -ms-user-select: none;
+    width: 45px;          
+    height: 45px;         
+    cursor: pointer;      
+    /* Removendo 'margin: 20px auto;' para ser controlado pelo container-agrupado */
+    background-image: url('../icons8-heart-100.png');
+    background-size: cover;
+    /* Mantenha a transição para o clique */
+    transition: transform 0.15s ease-out;
+    filter: drop-shadow(1px 1px 10px #ce1d1d);
+    
+    /* === APLICAÇÃO DA ANIMAÇÃO QUE FARÁ O CORAÇÃO PULSAR === */
+    animation: pulsoContinua 1.5s infinite ease-in-out; 
+}
+

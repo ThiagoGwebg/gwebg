@@ -127,7 +127,7 @@ body{
 }
 
 .coracao {
-    top: 20px;
+    top: ;
     position: absolute;
     user-select: none;
     -webkit-user-select: none; /* Para navegadores baseados em WebKit (Chrome, Safari) */
